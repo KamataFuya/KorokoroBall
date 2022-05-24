@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private int coinCount;
+
+    private void Start()
+    {
+        coinCount = 0;
+    }
     public void SceneReset()
     {
         string activeSceneName = SceneManager.GetActiveScene().name;
@@ -14,5 +20,11 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string nextScene)
     {
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void AddCoinCount()
+    {
+        coinCount++;
+        Debug.Log("CoinCount : " + coinCount);
     }
 }
